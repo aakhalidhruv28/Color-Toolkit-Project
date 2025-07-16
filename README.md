@@ -153,8 +153,4 @@ SOFTWARE.
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/aakhalidhruv28/Color-Toolkit-Project/issues).
 
----
-Made with ❤️ by Dhruv Aakhali.
-````
-
----
+````Made with ❤️ by Dhruv Aakhali.````
