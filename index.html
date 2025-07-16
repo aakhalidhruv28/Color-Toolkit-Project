@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Color Toolkit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <h1 id="main-title">Ultimate Color Toolkit</h1>
+        <p>A comprehensive suite of tools for designers and developers. Click the title 7 times...</p>
+        <div class="theme-switcher">
+            <label for="theme-toggle">Light Mode</label>
+            <input type="checkbox" id="theme-toggle" class="toggle-checkbox">
+            <label for="theme-toggle" class="toggle-label"></label>
+            <label for="theme-toggle">Dark Mode</label>
+        </div>
+    </header>
+
+    <main class="tools-grid">
+
+        <!-- =================================== -->
+        <!--     Tool 1: Color Picker            -->
+        <!-- =================================== -->
+        <article id="color-picker-tool" class="tool-card">
+            <h2>1. Color Picker</h2>
+            <div class="picker-layout">
+                <input type="color" id="color-picker-input" value="#5372f0">
+                <div class="color-preview" id="color-preview"></div>
+            </div>
+            <div class="input-group">
+                <label for="hex-input">HEX</label>
+                <input type="text" id="hex-input"><button class="copy-btn" data-copy-target="hex-input">Copy</button>
+            </div>
+            <div class="input-group">
+                <label for="rgb-input">RGB</label>
+                <input type="text" id="rgb-input"><button class="copy-btn" data-copy-target="rgb-input" data-copy-format="rgb">Copy</button>
+            </div>
+            <div class="input-group">
+                <label for="hsl-input">HSL</label>
+                <input type="text" id="hsl-input"><button class="copy-btn" data-copy-target="hsl-input" data-copy-format="hsl">Copy</button>
+            </div>
+            <button id="random-color-btn" class="action-btn">Generate Random Color</button>
+            <button id="picker-to-tools-btn" class="action-btn secondary">Use This Color in Other Tools</button>
+        </article>
+
+        <!-- =================================== -->
+        <!--     Tool 2: Gradient Generator      -->
+        <!-- =================================== -->
+        <article id="gradient-generator-tool" class="tool-card">
+            <h2>2. Gradient Generator</h2>
+            <div class="gradient-controls">
+                <select id="gradient-type"><option value="linear">Linear</option><option value="radial">Radial</option></select>
+                <input type="number" id="gradient-angle" value="90" min="0" max="360" title="Angle">°
+            </div>
+            <div id="gradient-stops"></div>
+            <button id="add-color-stop-btn" class="action-btn">Add Color Stop</button>
+            <div id="gradient-preview" class="gradient-preview-box"></div>
+            <div class="output-group">
+                <textarea id="gradient-css-output" rows="3" readonly></textarea>
+                <button class="copy-btn" data-copy-target="gradient-css-output">Copy CSS</button>
+            </div>
+        </article>
+        
+        <!-- =================================== -->
+        <!--     Tool 3: Color Mixer             -->
+        <!-- =================================== -->
+        <article id="color-mixer-tool" class="tool-card">
+            <h2>3. Color Mixer</h2>
+            <div class="mixer-interface">
+                <input type="color" id="mixer-color-1" value="#ff0000">
+                <div class="mixer-result">
+                    <div id="mixer-preview"></div>
+                    <span id="mixer-code">#7f007f</span>
+                </div>
+                <input type="color" id="mixer-color-2" value="#0000ff">
+            </div>
+            <input type="range" id="mixer-ratio" min="0" max="100" value="50" class="slider">
+            <div class="mixer-labels"><span>100%</span><span>50%</span><span>100%</span></div>
+        </article>
+
+        <!-- =================================== -->
+        <!--     Tool 4: Palette Generator       -->
+        <!-- =================================== -->
+        <article id="palette-generator-tool" class="tool-card">
+            <h2>4. Color Palettes</h2>
+            <div class="palette-controls">
+                <label>Base Color:</label>
+                <input type="color" id="palette-base-color" value="#3498db">
+                <select id="palette-rule">
+                    <option value="complementary">Complementary</option>
+                    <option value="analogous">Analogous</option>
+                    <option value="triadic">Triadic</option>
+                    <option value="monochromatic">Monochromatic</option>
+                    <option value="split-complementary">Split-Complementary</option>
+                </select>
+            </div>
+            <div id="palette-display" class="palette-container"></div>
+        </article>
+        
+        <!-- =================================== -->
+        <!--     Tool 5: Background Chooser      -->
+        <!-- =================================== -->
+        <article id="background-chooser-tool" class="tool-card">
+            <h2>5. Page Background</h2>
+            <p>Apply a color or gradient to the entire page background.</p>
+            <button id="apply-solid-bg" class="action-btn">Apply Solid Color from Picker</button>
+            <button id="apply-gradient-bg" class="action-btn">Apply Generated Gradient</button>
+            <button id="reset-bg" class="action-btn secondary">Reset Background</button>
+        </article>
+        
+        <!-- =================================== -->
+        <!--     Tool 6: Contrast Checker        -->
+        <!-- =================================== -->
+        <article id="contrast-checker-tool" class="tool-card">
+            <h2>6. Accessibility Checker</h2>
+            <div class="contrast-interface">
+                <div class="contrast-input">
+                    <label for="contrast-fg">Text Color</label>
+                    <input type="color" id="contrast-fg" value="#ffffff">
+                </div>
+                <div class="contrast-input">
+                    <label for="contrast-bg">Background Color</label>
+                    <input type="color" id="contrast-bg" value="#34495e">
+                </div>
+            </div>
+            <div id="contrast-preview">Hello World!</div>
+            <div id="contrast-results">
+                <p>Contrast Ratio: <b id="contrast-ratio">1.00</b></p>
+                <div class="status-box">
+                    <span>WCAG AA: <b id="wcag-aa" class="fail">Fail</b></span>
+                    <span>WCAG AAA: <b id="wcag-aaa" class="fail">Fail</b></span>
+                </div>
+            </div>
+        </article>
+
+    </main>
+    
+    <!-- =================================== -->
+    <!--    Secret/Hidden Sections           -->
+    <!-- =================================== -->
+    <section id="secret-info-section" class="tool-card hidden">
+        <h2>You found the secret!</h2>
+        <p>This section is all about the fundamentals of color theory.</p>
+        <details>
+            <summary>Primary, Secondary, Tertiary Colors</summary>
+            <p><strong>Primary:</strong> Red, Yellow, Blue. These are the base colors.<br><strong>Secondary:</strong> Orange, Green, Violet. Made by mixing two primaries.<br><strong>Tertiary:</strong> Made by mixing a primary and a secondary color.</p>
+        </details>
+        <details>
+            <summary>Warm vs. Cool Colors</summary>
+            <p><strong>Warm colors</strong> (reds, oranges, yellows) evoke warmth because they remind us of things like the sun or fire.<br><strong>Cool colors</strong> (blues, greens, purples) evoke a feeling of calm or coldness, like water or the sky.</p>
+        </details>
+    </section>
+
+    <div id="secret-disco" class="hidden">
+        <h2>KONAMI'd!</h2>
+        <button id="stop-disco-btn">Make it stop!</button>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>
+
+
+<!-- Coded By Dhruv Aakhali © -->
