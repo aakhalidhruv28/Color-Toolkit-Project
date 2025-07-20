@@ -1,4 +1,4 @@
-# Ultimate Color Toolkit 
+# Ultimate Color Toolkit
 
 <div align="center">
 
